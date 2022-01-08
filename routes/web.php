@@ -23,7 +23,7 @@ Route::post('/mountains', [MountainController::class, 'store']);
 
 // Edit form and update
 Route::get('/mountains/{id}/edit', [MountainController::class, 'edit']);
-Route::put('/mountains', [MountainController::class, 'update']);
+Route::put('/mountains/{id}', [MountainController::class, 'update']);
 
 Route::get('/mountains/{id}', [MountainController::class, 'show']);
 

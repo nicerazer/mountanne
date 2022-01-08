@@ -39,8 +39,26 @@ class MountainController extends Controller
         return view('mountains.edit', ['mountain' => Mountain::find($id)]);
     }
 
-    public function update () {
+    public function update (Request $request, $id) {
+        // $mountain = Mountain::create([
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'altitude' => $request->altitude,
+        // ]);
 
+        // Find
+        $mountain = Mountain::find($id);
+
+        // Manipulate
+        $mountain->name = $request->name;
+        $mountain->description = $request->description;
+        $mountain->altitude = $request->altitude;
+
+        // Save
+        $mountain->save();
+
+        // Redirect to page before
+        return redirect('mountains/' . $mountain->id);
     }
 
     public function destroy () {

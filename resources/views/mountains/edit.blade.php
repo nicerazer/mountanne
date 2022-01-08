@@ -41,7 +41,9 @@
         <div class="card-body">
           <h1 class="text-2xl mb-4">Edit {{ $mountain->name }}</h1>
 
-          <form action="/" method="">
+          <form action="/mountains/{{ $mountain->id }}" method="POST">
+            @csrf
+            @method('PUT')
             <div class="flex items-end gap-16">
               <div class="flex-1">
                 <!-- Name Input -->
@@ -49,7 +51,7 @@
                   <label class="label">
                     <span class="label-text">Mountain Name</span>
                   </label>
-                  <input type="text" placeholder="Enter the mountain name" class="input input-bordered">
+                  <input name="name" value="{{ $mountain->name }}" type="text" placeholder="Enter the mountain name" class="input input-bordered">
                   <label class="label">
                     <span class="label-text-alt">Please enter the mountain name</span>
                   </label>
@@ -60,7 +62,7 @@
                   <label class="label">
                     <span class="label-text">Description</span>
                   </label>
-                  <textarea placeholder="Enter the mountain name" class="textarea h-24 textarea-bordered"></textarea>
+                  <textarea name="description" placeholder="Enter the mountain name" class="textarea h-24 textarea-bordered">{{ $mountain->description }}</textarea>
                   <label class="label">
                     <span class="label-text-alt">Please enter the mountain description</span>
                   </label>
@@ -72,7 +74,7 @@
                     <span class="label-text">Altitude</span>
                   </label>
                   <label class="input-group">
-                    <input type="number" value="500" min="1" class="input input-bordered">
+                    <input name="altitude" value="{{ $mountain->altitude }}" type="number" value="500" min="1" class="input input-bordered">
                     <span>meters (height)</span>
                   </label>
                   <label class="label">
