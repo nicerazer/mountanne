@@ -11,6 +11,10 @@ class MountainController extends Controller
         return view('mountains.index', ['mountains' => Mountain::all()]);
     }
 
+    public function show() {
+        return view('mountains.show');
+    }
+
     public function create() {
         // Display the form
         return view('mountains.create');

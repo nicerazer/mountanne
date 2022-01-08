@@ -17,6 +17,8 @@ use App\Http\Controllers\MountainController;
 // The main routes CRUD
 Route::get('/mountains', [MountainController::class, 'index']);
 
+Route::get('/mountains/show', [MountainController::class, 'show']);
+
 // Create form and store
 Route::get('/mountains/create', [MountainController::class, 'create']);
 Route::post('/mountains', [MountainController::class, 'store']);
