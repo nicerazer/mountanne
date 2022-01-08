@@ -61,7 +61,10 @@ class MountainController extends Controller
         return redirect('mountains/' . $mountain->id);
     }
 
-    public function destroy () {
+    public function destroy ($id) {
+        $mountains = Mountain::find($id);
+        $mountains->delete();
+
         return view('mountains.index', ['mountains' => Mountain::all()]);
     }
 }

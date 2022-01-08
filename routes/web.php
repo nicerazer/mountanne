@@ -27,7 +27,7 @@ Route::put('/mountains/{id}', [MountainController::class, 'update']);
 
 Route::get('/mountains/{id}', [MountainController::class, 'show']);
 
-Route::delete('/mountains', [MountainController::class, 'destroy']);
+Route::delete('/mountains/{id}', [MountainController::class, 'destroy']);
 
 // Other routes
 

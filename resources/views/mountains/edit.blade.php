@@ -82,9 +82,16 @@
                   </label>
                 </div>
               </div>
-              <button class="btn btn-primary capitalize mt-4">Publish</button>
+              <div class="flex gap-4">
+                <button class="btn btn-primary capitalize mt-4">Publish</button>
+              </div>
             </div>
           </form>
+          <form action="/mountains/{{ $mountain->id }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-outline capitalize mt-4">Delete</button>
+            </form>
         </div>
     </div>
   </div>
