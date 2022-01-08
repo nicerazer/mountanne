@@ -11,8 +11,8 @@ class MountainController extends Controller
         return view('mountains.index', ['mountains' => Mountain::all()]);
     }
 
-    public function show() {
-        return view('mountains.show');
+    public function show($id) {
+        return view('mountains.show', ['mountain' => Mountain::find($id)]);
     }
 
     public function create() {
@@ -20,14 +20,23 @@ class MountainController extends Controller
         return view('mountains.create');
     }
 
-    public function store () {
+    public function store (Request $request) {
         // User posted something using a form
 
+        // Create a mountain
         // We store it into the database
+        $mountain = Mountain::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'altitude' => $request->altitude,
+        ]);
+
+        // Redirect to page before
+        return redirect('mountains/' . $mountain->id);
     }
 
-    public function edit () {
-        return view('mountains.edit');
+    public function edit ($id) {
+        return view('mountains.edit', ['mountain' => Mountain::find($id)]);
     }
 
     public function update () {

@@ -68,68 +68,39 @@
           </div>
         </div>
         <div class="flex flex-col gap-4">
-          <div class="card card-side bg-white">
-            <figure class="p-6 pr-0">
-              <img src="../../assets/images/mountain-1.png" alt="A mountain image" class="rounded-xl w-40 h-40">
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title flex justify-between">
-                A Pikes Peak Mountain
-                <span class="text-sm flex text-gray-300 hover:text-gray-400">
-                  20 Likes
-                  <svg xmlns="http://www.w3.org/2000/svg" class="ml-3 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-              </h2>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis obcaecati nulla repellendus quis corporis temporibus earum, reprehenderit dolorum voluptate eveniet minus! Minima atque natus itaque suscipit, vitae commodi nostrum exercitationem eos....</p>
-              <div class="flex gap-4">
-                <div class="flex items-center text-gray-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                  </svg>
-                  80 meter
+            @foreach ($mountains as $mountain)
+                <div class="card card-side bg-white">
+                    <figure class="p-6 pr-0">
+                    <img src="https://source.unsplash.com/random/500x500" alt="A mountain image" class="rounded-xl w-40 h-40">
+                    </figure>
+                    <div class="card-body">
+                    <h2 class="card-title flex justify-between">
+                        <a href="/mountains/{{ $mountain->id }}">{{ $mountain->name }}</a>
+                        <span class="text-sm flex text-gray-300 hover:text-gray-400">
+                        20 Likes
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-3 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                        </svg>
+                        </span>
+                    </h2>
+                    <p class="mb-4">{{ $mountain->description }}</p>
+                    <div class="flex gap-4">
+                        <div class="flex items-center text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        {{ $mountain->altitude }} meter
+                        </div>
+                        <div class="flex items-center text-green-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        Safe
+                        </div>
+                    </div>
+                    </div>
                 </div>
-                <div class="flex items-center text-green-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                  </svg>
-                  Safe
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card card-side bg-white">
-            <figure class="p-6 pr-0">
-              <img src="../../assets/images/mountain-1.png" alt="A mountain image" class="rounded-xl w-40 h-40">
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title flex justify-between">
-                A Pikes Peak Mountain
-                <span class="text-sm flex text-gray-300 hover:text-gray-400">
-                  20 Likes
-                  <svg xmlns="http://www.w3.org/2000/svg" class="ml-3 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-              </h2>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis obcaecati nulla repellendus quis corporis temporibus earum, reprehenderit dolorum voluptate eveniet minus! Minima atque natus itaque suscipit, vitae commodi nostrum exercitationem eos....</p>
-              <div class="flex gap-4">
-                <div class="flex items-center text-gray-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                  </svg>
-                  80 meter
-                </div>
-                <div class="flex items-center text-green-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                  </svg>
-                  Safe
-                </div>
-              </div>
-            </div>
-          </div>
+            @endforeach
         </div>
       </div>
     </div>

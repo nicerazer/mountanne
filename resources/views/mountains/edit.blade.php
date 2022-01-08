@@ -39,7 +39,7 @@
   <div class="flex justify-center">
     <div class="w-[74rem] flex justify-center bg-white card">
         <div class="card-body">
-          <h1 class="text-2xl mb-4">Add a new discovered mountain</h1>
+          <h1 class="text-2xl mb-4">Edit {{ $mountain->name }}</h1>
 
           <form action="/" method="">
             <div class="flex items-end gap-16">

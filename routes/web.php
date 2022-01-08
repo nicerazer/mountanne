@@ -17,15 +17,15 @@ use App\Http\Controllers\MountainController;
 // The main routes CRUD
 Route::get('/mountains', [MountainController::class, 'index']);
 
-Route::get('/mountains/show', [MountainController::class, 'show']);
-
 // Create form and store
 Route::get('/mountains/create', [MountainController::class, 'create']);
 Route::post('/mountains', [MountainController::class, 'store']);
 
 // Edit form and update
-Route::get('/mountains/edit', [MountainController::class, 'edit']);
+Route::get('/mountains/{id}/edit', [MountainController::class, 'edit']);
 Route::put('/mountains', [MountainController::class, 'update']);
+
+Route::get('/mountains/{id}', [MountainController::class, 'show']);
 
 Route::delete('/mountains', [MountainController::class, 'destroy']);
 
